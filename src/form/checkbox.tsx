@@ -13,7 +13,7 @@ export class Checkbox<
   > extends React.PureComponent<InputProps<T, boolean, K1, K2, K3, K4, K5>> {
 
   public handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const v = e.target.value
+    const v = e.target.checked
     this.props.form.set(this.props.name as [K1, K2, K3, K4, K5])(v as any)
   }
 
