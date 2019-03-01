@@ -14,13 +14,13 @@ export class TextInput<
 
   public handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const v = e.target.value
-    this.props.form.set(this.props.name as [K1, K2, K3, K4, K5])(v as any)
+    this.props.form.set(this.props.name)(v as any) // TODO: typing
   }
 
   public render() {
     return this.props.children({
       onChange: this.handleChange,
-      value: this.props.form.get(this.props.name) as any
+      value: this.props.form.get(this.props.name) as any // TODO: typing
     })
   }
 }
